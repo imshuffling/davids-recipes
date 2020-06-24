@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 
 class IndexPage extends Component {
   render() {
-    
     const recipesList = this.props.data.allNodeRecipe.edges
     console.log(recipesList)
 
