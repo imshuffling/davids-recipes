@@ -1,3 +1,25 @@
+.recipeList {
+}
+
+.recipeList > div {
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 20px;
+}
+
+.recipeList h3 {
+  margin-bottom: 5px;
+}
+
+.recipeList span {
+  font-size: 15px;
+  display: block;
+}
+
+.recipeList p {
+  color: hsl(0deg 0% 36% / 80%);
+  margin: 15px 0px;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

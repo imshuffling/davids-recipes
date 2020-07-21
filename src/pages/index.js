@@ -11,16 +11,20 @@ class IndexPage extends Component {
       <Layout>
         <section>
           <h1>Recipes</h1>
-          {recipesList.map((recipe, i) => (
-            <div key={i}>
-              <h3>{recipe.node.title}</h3>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: recipe.node.field_summary.value,
-                }}
-              />
-            </div>
-          ))}
+          <div className="recipeList">
+            {recipesList.map((recipe, i) => (
+              <div key={i}>
+                <h3>{recipe.node.title}</h3>
+                <span>Prep time: {recipe.node.field_preparation_time}mins</span>
+                <span>Cooking time: {recipe.node.field_cooking_time}mins</span>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: recipe.node.field_summary.value,
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </section>
       </Layout>
     )
@@ -33,6 +37,8 @@ export const query = graphql`
       edges {
         node {
           title
+          field_preparation_time
+          field_cooking_time
           field_summary {
             value
           }
