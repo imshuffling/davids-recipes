@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
-
 
 class IndexPage extends Component {
   render() {
@@ -13,12 +11,16 @@ class IndexPage extends Component {
       <Layout>
         <section>
           <h1>Recipes</h1>
-          {recipesList.map((recipe, i) => 
+          {recipesList.map((recipe, i) => (
             <div key={i}>
               <h3>{recipe.node.title}</h3>
-              <p dangerouslySetInnerHTML={{ __html: recipe.node.field_summary.value }} />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: recipe.node.field_summary.value,
+                }}
+              />
             </div>
-          )}
+          ))}
         </section>
       </Layout>
     )
