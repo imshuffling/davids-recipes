@@ -6,13 +6,17 @@
   margin-bottom: 20px;
 }
 
-.recipeList h3 {
+.recipeList h2 {
   margin-bottom: 5px;
 }
 
 .recipeList span {
   font-size: 15px;
   display: block;
+}
+
+.date {
+  margin-bottom: 20px;
 }
 
 .recipeList p {

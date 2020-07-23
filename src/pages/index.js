@@ -13,7 +13,8 @@ class IndexPage extends Component {
           <div className="recipeList">
             {recipesList.map((recipe, i) => (
               <div key={i}>
-                <h3>{recipe.node.title}</h3>
+                <h2>{recipe.node.title}</h2>
+                <span className="date">{recipe.node.created}</span>
                 <span>Prep time: {recipe.node.field_preparation_time}mins</span>
                 <span>Cooking time: {recipe.node.field_cooking_time}mins</span>
                 <div
@@ -32,10 +33,11 @@ class IndexPage extends Component {
 
 export const query = graphql`
   {
-    allNodeRecipe {
+    allNodeRecipe(sort: { order: DESC, fields: created }) {
       edges {
         node {
           title
+          created(formatString: "DD MMMM YYYY")
           field_preparation_time
           field_cooking_time
           field_summary {
